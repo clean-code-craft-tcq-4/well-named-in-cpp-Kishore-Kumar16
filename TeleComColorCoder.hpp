@@ -3,21 +3,19 @@
 #ifndef TELECOMCOLORCODER_H_
 #define TELECOMCOLORCODER_H_
 
+#define MAX_COLORS 5
+
 namespace TeleComColorCoder
 {
     enum MajorColor {WHITE, RED, BLACK, YELLOW, VIOLET};
     enum MinorColor {BLUE, ORANGE, GREEN, BROWN, SLATE};
 
-    const char* MajorColorNames[] = {
-        "White", "Red", "Black", "Yellow", "Violet"
-    };
-    int numberOfMajorColors =
-        sizeof(MajorColorNames) / sizeof(MajorColorNames[0]);
-    const char* MinorColorNames[] = {
-        "Blue", "Orange", "Green", "Brown", "Slate"
-    };
-    int numberOfMinorColors =
-        sizeof(MinorColorNames) / sizeof(MinorColorNames[0]);
+    // Added extern to avoid multiple redefinition
+    extern const char* MajorColorNames[MAX_COLORS];
+    extern const char* MinorColorNames[MAX_COLORS];
+    extern int numberOfMinorColors;
+    extern int numberOfMajorColors;
+        
 
     class ColorPair {
         private:
@@ -33,29 +31,15 @@ namespace TeleComColorCoder
             MinorColor getMinor() {
                 return minorColor;
             }
-            std::string ToString() {
-
-                std::string colorPairStr = MajorColorNames[majorColor];
-                colorPairStr += " ";
-                colorPairStr += MinorColorNames[minorColor];
-                return colorPairStr;
-            }
+            std::string ToString();
     };
 
-    ColorPair GetColorFromPairNumber(int pairNumber) {
+    ColorPair GetColorFromPairNumber(int pairNumber);
 
-        int zeroBasedPairNumber = pairNumber - 1;
-        MajorColor majorColor = 
-        (MajorColor)(zeroBasedPairNumber / numberOfMinorColors);
-        MinorColor minorColor = 
-        (MinorColor)(zeroBasedPairNumber % numberOfMinorColors);
+    int GetPairNumberFromColor(MajorColor major, MinorColor minor);
 
-        return ColorPair(majorColor, minorColor);
-    }
-    int GetPairNumberFromColor(MajorColor major, MinorColor minor) {
+    void DisplayColorFormat();
 
-        return major * numberOfMinorColors + minor + 1;
-    }
 }
 
 #endif //TELECOMCOLORCODER_H_

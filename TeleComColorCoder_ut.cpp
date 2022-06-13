@@ -30,5 +30,8 @@ int main() {
     testPairToNumber(TeleComColorCoder::BLACK, TeleComColorCoder::ORANGE, 12);
     testPairToNumber(TeleComColorCoder::VIOLET, TeleComColorCoder::SLATE, 25);
 
+
+    std::cout << "Color Code Format" << std::endl;
+    TeleComColorCoder::DisplayColorFormat();
     return 0;
 }
