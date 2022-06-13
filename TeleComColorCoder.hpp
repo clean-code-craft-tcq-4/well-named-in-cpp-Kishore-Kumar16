@@ -7,22 +7,8 @@
 
 namespace TeleComColorCoder
 {
-    enum MajorColor
-    {
-        WHITE,
-        RED,
-        BLACK,
-        YELLOW,
-        VIOLET
-    };
-    enum MinorColor
-    {
-        BLUE,
-        ORANGE,
-        GREEN,
-        BROWN,
-        SLATE
-    };
+    enum MajorColor { WHITE, RED, BLACK, YELLOW, VIOLET };
+    enum MinorColor { BLUE, ORANGE, GREEN, BROWN, SLATE };
 
     // Added extern to avoid multiple redefinition
     extern const char *MajorColorNames[MAX_COLORS];
@@ -59,9 +45,7 @@ namespace TeleComColorCoder
     };
 
     ColorPair GetColorFromPairNumber(int pairNumber);
-
     int GetPairNumberFromColor(MajorColor major, MinorColor minor);
-
     void DisplayColorFormat();
 
 }
