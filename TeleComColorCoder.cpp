@@ -2,27 +2,15 @@
 
 namespace TeleComColorCoder
 {
+    const char *MajorColorNames[MAX_COLORS] = {
+        "White", "Red", "Black", "Yellow", "Violet"};
 
-    const char* MajorColorNames[MAX_COLORS] = {
-        "White", "Red", "Black", "Yellow", "Violet"
-    };
-    
-    const char* MinorColorNames[MAX_COLORS] = {
-        "Blue", "Orange", "Green", "Brown", "Slate"
-    };
+    const char *MinorColorNames[MAX_COLORS] = {
+        "Blue", "Orange", "Green", "Brown", "Slate"};
 
     int numberOfMajorColors = sizeof(MajorColorNames) / sizeof(MajorColorNames[0]);
 
     int numberOfMinorColors = sizeof(MinorColorNames) / sizeof(MinorColorNames[0]);
-
-    std::string ColorPair::ToString()
-    {
-
-        std::string colorPairStr = MajorColorNames[majorColor];
-        colorPairStr += " ";
-        colorPairStr += MinorColorNames[minorColor];
-        return colorPairStr;
-    }
 
     ColorPair GetColorFromPairNumber(int pairNumber)
     {
@@ -36,7 +24,6 @@ namespace TeleComColorCoder
 
     int GetPairNumberFromColor(MajorColor major, MinorColor minor)
     {
-
         return major * numberOfMinorColors + minor + 1;
     }
 
@@ -45,9 +32,7 @@ namespace TeleComColorCoder
 
         int index1, index2, pairNumber;
 
-        std::cout << "PairNumber \t"
-                  << "Major Color\t"
-                  << "Minor Color\t" << std::endl;
+        std::cout << "PairNumber \t" << "Major Color\t" << "Minor Color\t" << std::endl;
         for (index1 = 0; index1 < numberOfMajorColors; index1++)
         {
             for (index2 = 0; index2 < numberOfMinorColors; index2++)
@@ -61,5 +46,4 @@ namespace TeleComColorCoder
             }
         }
     }
-
 } // namespace TeleComColorCoder
