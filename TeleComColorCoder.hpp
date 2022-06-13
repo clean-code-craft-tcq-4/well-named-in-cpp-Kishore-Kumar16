@@ -34,7 +34,7 @@ namespace TeleComColorCoder
         {
             return minorColor;
         }
-        std::string ColorPair::ToString()
+        std::string ToString()
         {
 
             std::string colorPairStr = MajorColorNames[majorColor];
