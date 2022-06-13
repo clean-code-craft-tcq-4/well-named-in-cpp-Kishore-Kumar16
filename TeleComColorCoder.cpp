@@ -5,6 +5,12 @@ namespace TeleComColorCoder
     const char *MajorColorNames[MAX_COLORS] = {
         "White", "Red", "Black", "Yellow", "Violet"};
 
+<<<<<<< HEAD
+=======
+    const char *MajorColorNames[MAX_COLORS] = {
+        "White", "Red", "Black", "Yellow", "Violet"};
+
+>>>>>>> ae5559a58bc7fa409e1c719646de2575f6b68f72
     const char *MinorColorNames[MAX_COLORS] = {
         "Blue", "Orange", "Green", "Brown", "Slate"};
 
