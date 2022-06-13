@@ -3,26 +3,15 @@
 namespace TeleComColorCoder
 {
 
-    const char* MajorColorNames[MAX_COLORS] = {
-        "White", "Red", "Black", "Yellow", "Violet"
-    };
-    
-    const char* MinorColorNames[MAX_COLORS] = {
-        "Blue", "Orange", "Green", "Brown", "Slate"
-    };
+    const char *MajorColorNames[MAX_COLORS] = {
+        "White", "Red", "Black", "Yellow", "Violet"};
+
+    const char *MinorColorNames[MAX_COLORS] = {
+        "Blue", "Orange", "Green", "Brown", "Slate"};
 
     int numberOfMajorColors = sizeof(MajorColorNames) / sizeof(MajorColorNames[0]);
 
     int numberOfMinorColors = sizeof(MinorColorNames) / sizeof(MinorColorNames[0]);
-
-    std::string ColorPair::ToString()
-    {
-
-        std::string colorPairStr = MajorColorNames[majorColor];
-        colorPairStr += " ";
-        colorPairStr += MinorColorNames[minorColor];
-        return colorPairStr;
-    }
 
     ColorPair GetColorFromPairNumber(int pairNumber)
     {
